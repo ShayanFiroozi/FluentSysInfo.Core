@@ -1,5 +1,5 @@
 <p align="center">
- <img src="https://github.com/ShayanFiroozi/FluentSysInfo.Core/blob/master/Icon.ico"
+ <img src="https://github.com/ShayanFiroozi/FluentSysInfo.Core/blob/master/src/FluentSysInfoCore/Icon.ico"
 </p>
 
 # FluentSysInfo.Core <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"/> <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"/>
@@ -211,7 +211,7 @@ See [**LICENSE**](LICENSE.md) for more details.
 <img src="https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white"
 </p>
   
-Use **Visual Studio 2022** and open the solution 'FluentSysInfo.Core.sln'.
+Use **Visual Studio 2022** and open the solution file **FluentSysInfo.Core.sln**
 
 **FluentSysInfo.Core** solution is setup to support following .Net versions :
 
