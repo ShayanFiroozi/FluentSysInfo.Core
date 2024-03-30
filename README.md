@@ -222,7 +222,7 @@ Use **Visual Studio 2022** and open the solution 'FluentSysInfo.Core.sln'.
 
 
 > **Note**:  
-Since the **FluentSysInfo.Core** solution is supporting multi target frameworks , to build the solution successfully you should install all .Net versions above , otherwise you can easily exclude not interested framework(s) by editing **TargetFrameworks** tag in the [FluentSysInfo.Core Project File](https://github.com/ShayanFiroozi/FluentSysInfo.Core/blob/master/FluentSysInfo.Core.csproj).
+Since the **FluentSysInfo.Core** solution is supporting multi target frameworks , to build the solution successfully you should install all .Net versions above , otherwise you can easily exclude not interested framework(s) by editing **TargetFrameworks** tag in the [FluentSysInfo.Core Project File](https://github.com/ShayanFiroozi/FluentSysInfo.Core/blob/master/src/FluentSysInfoCore/FluentSysInfo.Core.csproj).
 
 <br/>
  
