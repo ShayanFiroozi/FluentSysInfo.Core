@@ -50,7 +50,7 @@ namespace FluentSysInfo.Core.FastResponseExecutor
 
                 if (fastResponseAgent.FastResponseAgent == 0 || fastResponseAgent.FastResponseAgent == FluentSysInfoTypes.DateTime)
                 {
-                    throw new ArgumentException($"'{nameof(fastResponseAgent.FastResponseAgent)}' is not supported.", nameof(fastResponseAgent.FastResponseAgent));
+                    throw new Exception($"'{nameof(fastResponseAgent.FastResponseAgent)}' is not supported.");
                 }
 
                 Interval = fastResponseAgent.ExecutionInterval.TotalMilliseconds;
