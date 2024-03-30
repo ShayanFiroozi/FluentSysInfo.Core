@@ -49,7 +49,7 @@ Since this is a new repository , there's no contributor yet! But **FluentSysInfo
  
 ## How To Use ❔
 It's really simple to use the **FluentSysInfo.Core** :
-- Example for the Physical Memory (RAM) Info : ⬇
+- **Example for the Physical Memory (RAM) Info** ⬇
 <p align="center">
 <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"
 </p>
@@ -118,7 +118,7 @@ And the result from the **FluentSysInfo.Core** would be something like this :
 }
 ```
 
-- Example for the OS Info : ⬇
+- **Example for the OS Info** ⬇
 <p align="center">
 <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"
 </p>
