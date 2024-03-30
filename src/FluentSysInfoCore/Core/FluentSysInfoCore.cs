@@ -39,7 +39,7 @@ namespace FluentSysInfo.Core
             else
             {
                 // Get a fresh system information from WMI class via executing a powershell command 👇
-                return new WMISysInfoHelper().GetSysInfo(SysInfoType);
+                return new WmiSysInfoHelper().GetSysInfo(SysInfoType);
             }
         }
 
@@ -87,7 +87,7 @@ namespace FluentSysInfo.Core
         }
 
 
-        public IEnumerable<FastResponseAgentExecutor> ActiveAgents => FastResponseManagementHelper.ActiveAgents; //.Select(a => a.Agent);
+        public IEnumerable<FastResponseAgentExecutor> ActiveAgents => FastResponseManagementHelper.ActiveAgents;
 
     }
 }

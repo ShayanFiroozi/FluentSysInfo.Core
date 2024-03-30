@@ -99,7 +99,7 @@ namespace FluentSysInfo.Core.FastResponseExecutor
 
         public bool IsRunning()
         {
-            return ExecutionTimer == null ? false : ExecutionTimer.IsRunning;
+            return ExecutionTimer != null && ExecutionTimer.IsRunning;
         }
 
 

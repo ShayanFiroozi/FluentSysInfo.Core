@@ -18,7 +18,7 @@ using System.Linq;
 
 namespace FluentSysInfo.Core.Helpers
 {
-    public sealed class WMISysInfoHelper
+    public sealed class WmiSysInfoHelper
     {
         private const string PowerShellCommandPattern = "Get-CimInstance -Class {TargetClassName} -ErrorAction Stop | Select-Object *";
 
@@ -39,7 +39,7 @@ namespace FluentSysInfo.Core.Helpers
             {
 
                 // Get the target WMI Class name from related 'SysInfoType' argument
-                string targetWMIClassName = WMIClassNameHelper.WMIClassNames.Single(t => t.SysInfoType == SysInfoType).RelatedWMIClassName;
+                string targetWMIClassName = WmiClassNameHelper.WMIClassNames.Single(t => t.SysInfoType == SysInfoType).RelatedWMIClassName;
 
                 return GetUserDefinedWMIClassSysInfo(targetWMIClassName);
             }

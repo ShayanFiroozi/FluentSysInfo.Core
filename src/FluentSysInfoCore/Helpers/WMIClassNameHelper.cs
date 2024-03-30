@@ -18,7 +18,7 @@ using System.Threading;
 
 namespace FluentSysInfo.Core.Helpers
 {
-    internal static class WMIClassNameHelper
+    internal static class WmiClassNameHelper
     {
 
         // Using Singleton behaviour !!
@@ -66,7 +66,7 @@ namespace FluentSysInfo.Core.Helpers
         }
 
 
-        static WMIClassNameHelper()
+        static WmiClassNameHelper()
         {
             InitializeWMIClassesInfo();
         }

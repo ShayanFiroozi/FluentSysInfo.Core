@@ -50,7 +50,7 @@ namespace FluentSysInfo.Core.FastResponseExecutor
 
                 if (fastResponseAgent.FastResponseAgent == 0 || fastResponseAgent.FastResponseAgent == FluentSysInfoTypes.DateTime)
                 {
-                    throw new ArgumentException($"'{nameof(SysInfoType)}' is not supported.", nameof(SysInfoType));
+                    throw new ArgumentException($"'{nameof(fastResponseAgent.FastResponseAgent)}' is not supported.", nameof(fastResponseAgent.FastResponseAgent));
                 }
 
                 Interval = fastResponseAgent.ExecutionInterval.TotalMilliseconds;
@@ -76,12 +76,8 @@ namespace FluentSysInfo.Core.FastResponseExecutor
 
             private void Timer_Elapsed(object sender, ElapsedEventArgs e)
             {
+                OnTimerExecution?.Invoke(sender, new WmiSysInfoHelper().GetSysInfo(SysInfoType));
 
-                //Timer.Stop();
-
-                OnTimerExecution?.Invoke(sender, new WMISysInfoHelper().GetSysInfo(SysInfoType));
-
-                //  Timer.Start();
             }
 
 
