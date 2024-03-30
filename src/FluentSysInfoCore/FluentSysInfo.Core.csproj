@@ -4,6 +4,7 @@
 		<PropertyGroup>
 			<TargetFrameworks>net48;net6.0-windows;net7.0-windows;net8.0-windows</TargetFrameworks>
 			<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+			<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 			<Deterministic>false</Deterministic>
 			<PlatformTarget>AnyCPU</PlatformTarget>
 			<ApplicationIcon>Icon.ico</ApplicationIcon>
