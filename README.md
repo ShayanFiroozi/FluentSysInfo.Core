@@ -21,8 +21,8 @@
 <br/>
 
 ## Features 💯
- **FluentSysInfo.Core features :**
- * **Supported System Information :**  
+ **Supported System Information :**
+ <br/>  
     ✔ Date Time Info  
     ✔ OS Info  
     ✔ Main Board Info  
@@ -48,27 +48,15 @@ Since this is a new repository , there's no contributor yet! But **FluentSysInfo
 <br/>
  
 ## How To Use ❔
-It's really simple to call the **FluentSysInfo.Core** WebAPI :
- - Example for the Date Time : ⬇
+It's really simple to use the **FluentSysInfo.Core** :
+- Example for the Physical Memory (RAM) Info : ⬇
 <p align="center">
 <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"
 </p>
  
  ```csharp
-            string ServerSecteyKey = "FluentSysInfoSecretKeyXXX";
-            string TargetUrl = $"http://localhost:54800/api/SysInfo/GetDateTimeInfo/{ServerSecteyKey}";
 
-            using (HttpClient client = new HttpClient())
-            {
-                HttpResponseMessage response = await client.GetAsync(TargetUrl);
-
-                string result = await response.Content.ReadAsStringAsync();
-
-                Console.WriteLine(result);
-
-            }
-
-            Console.ReadLine();
+Console.WriteLine(new FluentSysInfoCore().GetSystemInfo(FluentSysInfoTypes.PhysicalMemory));
 
 ```   
 
@@ -79,12 +67,54 @@ And the result from the **FluentSysInfo.Core** would be something like this :
  
 ```json
 {
-  "DateTime": "3/19/2024 3:51:49 PM",
-  "DateTimeUTC": "3/19/2024 12:21:49 PM",
-  "DateOnly": "3/19/2024",
-  "TimeOnly": "3:51:49 PM",
-  "LongDate": "Tuesday, March 19, 2024",
-  "FullDateTime": "Tuesday, March 19, 2024  3:51:49 PM"
+ "Caption": "Physical Memory",
+ "Description": "Physical Memory",
+ "Name": "Physical Memory",
+ "Manufacturer": "04CB",
+ "SerialNumber": "2B960400",
+ "Tag": "Physical Memory 0",
+ "FormFactor": "8",
+ "BankLabel": "BANK 0",
+ "Capacity": "8589934592",
+ "DataWidth": "64",
+ "InterleavePosition": "0",
+ "MemoryType": "0",
+ "Speed": "2133",
+ "TotalWidth": "64",
+ "Attributes": "2",
+ "ConfiguredClockSpeed": "2133",
+ "ConfiguredVoltage": "1200",
+ "DeviceLocator": "ChannelA-DIMM0",
+ "InterleaveDataDepth": "0",
+ "MaxVoltage": "1200",
+ "MinVoltage": "1200",
+ "SMBIOSMemoryType": "26",
+ "TypeDetail": "128"
+}
+{
+ "Caption": "Physical Memory",
+ "Description": "Physical Memory",
+ "Name": "Physical Memory",
+ "Manufacturer": "04CB",
+ "SerialNumber": "55960400",
+ "Tag": "Physical Memory 1",
+ "FormFactor": "8",
+ "BankLabel": "BANK 1",
+ "Capacity": "8589934592",
+ "DataWidth": "64",
+ "InterleavePosition": "0",
+ "MemoryType": "0",
+ "Speed": "2133",
+ "TotalWidth": "64",
+ "Attributes": "2",
+ "ConfiguredClockSpeed": "2133",
+ "ConfiguredVoltage": "1200",
+ "DeviceLocator": "ChannelA-DIMM1",
+ "InterleaveDataDepth": "0",
+ "MaxVoltage": "1200",
+ "MinVoltage": "1200",
+ "SMBIOSMemoryType": "26",
+ "TypeDetail": "128"
 }
 ```
 
@@ -94,20 +124,8 @@ And the result from the **FluentSysInfo.Core** would be something like this :
 </p>
  
  ```csharp
-            string ServerSecteyKey = "FluentSysInfoSecretKeyXXX";
-            string TargetUrl = $"http://localhost:54800/api/SysInfo/GetOsInfo/{ServerSecteyKey}";
 
-            using (HttpClient client = new HttpClient())
-            {
-                HttpResponseMessage response = await client.GetAsync(TargetUrl);
-
-                string result = await response.Content.ReadAsStringAsync();
-
-                Console.WriteLine(result);
-
-            }
-
-            Console.ReadLine();
+  Console.WriteLine(new FluentSysInfoCore().GetSystemInfo(FluentSysInfoTypes.OperatingSystem));
 
 ```   
 
@@ -175,46 +193,7 @@ And the result from the **FluentSysInfo.Core** would be something like this :
 }
 ```
 
-
-> :information_source: 
-**FluentSysInfo.Core** settings can be easily changed via [Service Settings File](https://github.com/ShayanFiroozi/FluentSysInfo.Core/blob/master/Settings/ServiceSettings.json).  
-    
-> :warning: 
-It is recommended to keep the **UseAuthentication** setting enable to prevent unwanted access to the target machine information.
-
 <br/>
-
-    
-### Available APIs : 
-* **Date And Time Info -> /api/SysInfo/GetDateTimeInfo**
-* **OS Info -> /api/SysInfo/GetOsInfo**
-* **CPU Info -> /api/SysInfo/GetCpuInfo**
-* **Mother Board Info -> /api/SysInfo/GetMotherBoardInfo**
-* **BIOS Info -> /api/SysInfo/GetBiosInfo**
-* **Physical Memory Info -> /api/SysInfo/GetPhysicalMemoryInfo**
-* **Running Processes Info -> /api/SysInfo/GetRunningProcessesInfo**
-* **Windows Services Info -> /api/SysInfo/GetWindowsServicesInfo**
-* **Graphic Card Info -> /api/SysInfo/GetGraphicCardInfo**
-* **Network Interface(s) Info -> /api/SysInfo/GetNetworkInterfaceInfo**
-* **Disk(s) Info -> /api/SysInfo/GetDiskInfo**
-* **Disk's Partition(s) Info -> /api/SysInfo/GetPartitionInfo**
-* **Logical Drive(s) Info -> /api/SysInfo/GetDriveInfo**
-
-
-  
-
-<br/>  
-  
-> :warning:  If **UseAuthentication** settings is enable the secret key should be sent by each **Get** request.
-
-
-> :information_source: **Example With Authentication** : http://localhost:54800/api/SysInfo/GetDateTimeInfo/FluentSysInfoSecretKeyXXX
-<br/>
-
-
-> :information_source: **Example Without Authentication** : http://localhost:54800/api/SysInfo/GetOsInfo
- <br/>
- 
  
 ## Known Issues ‼ 
  **Not Reported Yet!** 😎
