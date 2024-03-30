@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	
+		<PropertyGroup>
+			<TargetFrameworks>net48;net6.0-windows;net7.0-windows;net8.0-windows</TargetFrameworks>
+			<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+			<Deterministic>false</Deterministic>
+			<PlatformTarget>AnyCPU</PlatformTarget>
+			<ApplicationIcon>Icon.ico</ApplicationIcon>
+			<PackageIcon>Icon.png</PackageIcon>
+			<ApplicationManifest>app.manifest</ApplicationManifest>
+		</PropertyGroup>
+
+		<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+			<DebugType>full</DebugType>
+		</PropertyGroup>
+
+		<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+			<DebugType>full</DebugType>
+		</PropertyGroup>
+
+		<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net48|AnyCPU'">
+			<DebugType>none</DebugType>
+		</PropertyGroup>
+
+		<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-windows|AnyCPU'">
+			<DebugType>none</DebugType>
+		</PropertyGroup>
+
+		<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-windows|AnyCPU'">
+			<DebugType>none</DebugType>
+		</PropertyGroup>
+
+		<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-windows|AnyCPU'">
+			<DebugType>none</DebugType>
+		</PropertyGroup>
+
+		<ItemGroup>
+		  <Content Include="Icon.ico" />
+		</ItemGroup>
+
+		<ItemGroup>
+		  <None Include="..\Icon.png">
+		    <Pack>True</Pack>
+		    <PackagePath>\</PackagePath>
+		  </None>
+		</ItemGroup>
+
+		<ItemGroup>
+		  <PackageReference Include="FastLog.Net" Version="1.1.8568" />
+		</ItemGroup>
+	
+
+</Project>
