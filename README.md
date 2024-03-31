@@ -46,20 +46,16 @@ The **Fast Response** feature is designed to deliver the information almost **im
     ✔ Running Processes Info  
     ✔ Windows Services Info  
     
- <br/>  
 
-  
- 
-## Contributions 🤝
-Since this is a new repository , there's no contributor yet! But **FluentSysInfo.Core** welcomes and appreciates any contribution , pull request or bug report.
-
- 
 
 
 <br/>
  
 ## How To Use ❔
 It's really simple to use the **FluentSysInfo.Core** :
+
+ <br/>
+ 
 - **Example for the Physical Memory (RAM) Info** ⬇
 <p align="center">
 <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"
@@ -129,6 +125,8 @@ And the result from the **FluentSysInfo.Core** would be something like this :
 }
 ```
 
+ <br/>
+ 
 - **Example for the OS Info** ⬇
 <p align="center">
 <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"
@@ -254,6 +252,14 @@ Use **Visual Studio 2022** and open the solution file **FluentSysInfo.Core.sln**
 Since the **FluentSysInfo.Core** solution is supporting multi target frameworks , to build the solution successfully you should install all .Net versions above , otherwise you can easily exclude not interested framework(s) by editing **TargetFrameworks** tag in the [FluentSysInfo.Core Project File](https://github.com/ShayanFiroozi/FluentSysInfo.Core/blob/master/src/FluentSysInfoCore/FluentSysInfo.Core.csproj).
 
 <br/>
+
+   
+ 
+## Contributions 🤝
+Since this is a new repository , there's no contributor yet! But **FluentSysInfo.Core** welcomes and appreciates any contribution , pull request or bug report.
+
+<br/>  
+   
  
 ## Buy me a coffee for more coding effort ! ☕
 ![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black) <img src="https://img.shields.io/badge/Bitcoin-000000?style=for-the-badge&logo=bitcoin&logoColor=white"/> <img src="https://img.shields.io/badge/tether-168363?style=for-the-badge&logo=tether&logoColor=white"/> <img src="https://img.shields.io/badge/dogecoin-C2A633?style=for-the-badge&logo=dogecoin&logoColor=white"/> <img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white"/>
