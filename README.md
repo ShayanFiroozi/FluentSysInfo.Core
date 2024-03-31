@@ -26,7 +26,7 @@
 ## Whats is special about **FluentSysInfo** ? 👍
 **FluentSysInfo** uses an internal caching machanism called **'Fast Response'**.<br/><br/>
 Getting the System Information could be a **huge I/O** load and makes your app slow ! Specially when your are requesting a Disk , Partition , CPU information , Running Processes , Installed Services or etc ...<br/><br/>
-The **Fast Response** feature is designed to deliver the information almost **immediately** after requesting a system infomation ✔
+The **Fast Response** feature is designed to deliver the information almost **immediately** after requesting a system infomation 👌
     
  <br/>  
 
