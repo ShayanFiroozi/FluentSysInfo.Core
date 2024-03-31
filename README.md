@@ -25,7 +25,7 @@
  
 ## Whats is special about **FluentSysInfo** ? 👍
 **FluentSysInfo** uses an internal caching machanism called **'Fast Response'**.<br/><br/>
-Getting the System Information could be a **huge I/O** load and makes your app slow ! Specially when your are requesting a Disk , Partition , CPU information or etc ...<br/><br/>
+Getting the System Information could be a **huge I/O** load and makes your app slow ! Specially when your are requesting a Disk , Partition , CPU information , Running Processes , Installed Services or etc ...<br/><br/>
 The **Fast Response** feature is designed to deliver the information almost **immediately** after requesting a system infomation ✔
     
  <br/>  
@@ -203,6 +203,24 @@ And the result from the **FluentSysInfo.Core** would be something like this :
  "WindowsDirectory": "C:\\Windows"
 }
 ```
+
+<br/>
+
+- **How to enable the Fast Response feature ?** ⬇
+<p align="center">
+<img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"
+</p>
+ 
+ ```csharp
+
+  FluentSysInfoCore fluentSysInfoCore = new FluentSysInfoCore();
+
+  fluentSysInfoCore.AddFastResponseAgent(FluentSysInfoTypes.InstalledServices, TimeSpan.FromSeconds(5));
+  fluentSysInfoCore.AddFastResponseAgent(FluentSysInfoTypes.RunningProcesses, TimeSpan.FromSeconds(5));
+
+  fluentSysInfoCore.StartAllFastResponseAgents();
+
+```   
 
 <br/>
  
