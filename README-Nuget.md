@@ -1,8 +1,3 @@
-<p align="center">
- <img src="https://github.com/ShayanFiroozi/FluentSysInfo.Core/blob/master/src/FluentSysInfoCore/Icon.ico"
-</p>
-
-# FluentSysInfo.Core <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"/> <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"/>
 ![with-coffee](https://img.shields.io/badge/made%20with-%E2%98%95%EF%B8%8F%20coffee-yellow.svg)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=ShayanFiroozi_FluentSysInfo.Core&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=ShayanFiroozi_FluentSysInfo.Core)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ShayanFiroozi_FluentSysInfo.Core&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=ShayanFiroozi_FluentSysInfo.Core)
@@ -14,26 +9,20 @@
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=ShayanFiroozi_FluentSysInfo.Core&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=ShayanFiroozi_FluentSysInfo.Core)
 [![GitHub License](https://img.shields.io/github/license/ShayanFiroozi/FluentSysInfo.Core)](https://github.com/ShayanFiroozi/FluentSysInfo.Core/blob/master/LICENSE.md)
  
-**FluentSysInfo.Core** Provides the accessibility to the various System Informations.
-
-✔ FluentSysInfo.Core uses [FastLog.Net](https://github.com/ShayanFiroozi/FastLog.Net) , Ultra Fast and High performance logger for .NET 💯 
-
-<br/>
-
-
-  
+**FluentSysInfo.Core** Provides the accessibility to the various System Informations with **Fast Resonse** feature and it's fully thread safe.
+ 
  
 ## Whats is special about **FluentSysInfo** ? 👍
 **FluentSysInfo** uses an internal caching machanism called **'Fast Response'**.<br/><br/>
 Getting the System Information could be a **huge I/O** load and makes your app slow ! Specially when your are requesting a Disk , Partition , CPU information , Running Processes , Installed Services or etc ...<br/><br/>
 The **Fast Response** feature is designed to deliver the information almost **immediately** after requesting a system infomation 👌
     
- <br/>  
+  
 
 
 ## Features 💯
  **Supported System Information :**
- <br/>  
+  
     ✔ Date Time Info  
     ✔ OS Info  
     ✔ Main Board Info  
@@ -49,21 +38,22 @@ The **Fast Response** feature is designed to deliver the information almost **im
 
 
 
-<br/>
+ 
  
 ## How To Use ❔
 It's really simple to use the **FluentSysInfo.Core** :
 
- <br/>
+  
  
 - **Example for the Physical Memory (RAM) Info** ⬇
 <p align="center">
 <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"
 </p>
  
+ 
  ```csharp
 
-Console.WriteLine(new FluentSysInfoCore().GetSystemInfo(FluentSysInfoTypes.PhysicalMemory));
+    Console.WriteLine(new FluentSysInfoCore().GetSystemInfo(FluentSysInfoTypes.PhysicalMemory));
 
 ```   
 
@@ -125,7 +115,7 @@ And the result from the **FluentSysInfo.Core** would be something like this :
 }
 ```
 
- <br/>
+  
  
 - **Example for the OS Info** ⬇
 <p align="center">
@@ -202,7 +192,7 @@ And the result from the **FluentSysInfo.Core** would be something like this :
 }
 ```
 
-<br/>
+ 
 
 - **How to enable the Fast Response feature ?** ⬇
 <p align="center">
@@ -221,10 +211,8 @@ And the result from the **FluentSysInfo.Core** would be something like this :
 ```   
 
 
-<br/>
+ 
  
  ## © License
 **FluentSysInfo.Core** is an open source software, licensed under the terms of MIT license.
 See [**LICENSE**](LICENSE.md) for more details.
-
-<br/>
