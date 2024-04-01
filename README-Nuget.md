@@ -13,15 +13,14 @@
  
  
 ## Whats is special about **FluentSysInfo** ? 👍
-**FluentSysInfo** uses an internal caching machanism called **'Fast Response'**.<br/><br/>
-Getting the System Information could be a **huge I/O** load and makes your app slow ! Specially when your are requesting a Disk , Partition , CPU information , Running Processes , Installed Services or etc ...<br/><br/>
+**FluentSysInfo** uses an internal caching machanism called **'Fast Response'**.
+Getting the System Information could be a **huge I/O** load and makes your app slow ! Specially when your are requesting a Disk , Partition , CPU information , Running Processes , Installed Services or etc ...
 The **Fast Response** feature is designed to deliver the information almost **immediately** after requesting a system infomation 👌
     
   
 
 
 ## Features 💯
- **Supported System Information :**
   
     ✔ Date Time Info  
     ✔ OS Info  
@@ -46,10 +45,6 @@ It's really simple to use the **FluentSysInfo.Core** :
   
  
 - **Example for the Physical Memory (RAM) Info** ⬇
-<p align="center">
-<img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"
-</p>
- 
  
  ```csharp
 
@@ -58,9 +53,6 @@ It's really simple to use the **FluentSysInfo.Core** :
 ```   
 
 And the result from the **FluentSysInfo.Core** would be something like this :  
-<p align="center">
-<img src="https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white"
-</p>
  
 ```json
 {
@@ -118,9 +110,6 @@ And the result from the **FluentSysInfo.Core** would be something like this :
   
  
 - **Example for the OS Info** ⬇
-<p align="center">
-<img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"
-</p>
  
  ```csharp
 
@@ -129,9 +118,6 @@ And the result from the **FluentSysInfo.Core** would be something like this :
 ```   
 
 And the result from the **FluentSysInfo.Core** would be something like this :  
-<p align="center">
-<img src="https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white"
-</p>
  
 ```json
 {
@@ -195,9 +181,6 @@ And the result from the **FluentSysInfo.Core** would be something like this :
  
 
 - **How to enable the Fast Response feature ?** ⬇
-<p align="center">
-<img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"
-</p>
  
  ```csharp
 
