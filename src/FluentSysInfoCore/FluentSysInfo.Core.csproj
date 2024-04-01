@@ -10,6 +10,19 @@
 			<ApplicationIcon>Icon.ico</ApplicationIcon>
 			<PackageIcon>Icon.png</PackageIcon>
 			<ApplicationManifest>app.manifest</ApplicationManifest>
+			<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+			<PackageId>FluentSysInfo.Core</PackageId>
+			<Title>Fluent System Information (Core Module)</Title>
+			<Authors>Shayan Firoozi</Authors>
+			<Description>Provides the accessibility to the various System Informations with Fast Response caching feature</Description>
+			<Copyright>Under MIT License</Copyright>
+			<PackageProjectUrl>https://github.com/ShayanFiroozi/FluentSysInfo.Core</PackageProjectUrl>
+			<RepositoryUrl>https://github.com/ShayanFiroozi/FluentSysInfo.Core</RepositoryUrl>
+			<PackageTags>csharp,dotnet,dotnetcore,netcore,dotnet-core,powershell,powershell-script,fluent csharp-code,hardware-information,systeminfo,systeminformation,wmi-query,softlock</PackageTags>
+			<PackageReleaseNotes>Firt Release of FluentSysInfo.Core</PackageReleaseNotes>
+			<PackageReadmeFile>README-Nuget.md</PackageReadmeFile>
+			<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+			<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		</PropertyGroup>
 
 		<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -41,7 +54,11 @@
 		</ItemGroup>
 
 		<ItemGroup>
-		  <None Include="..\Icon.png">
+		  <None Include="..\..\LICENSE.md">
+		    <Pack>True</Pack>
+		    <PackagePath>\</PackagePath>
+		  </None>
+		  <None Include="..\..\README-Nuget.md">
 		    <Pack>True</Pack>
 		    <PackagePath>\</PackagePath>
 		  </None>
@@ -49,6 +66,13 @@
 
 		<ItemGroup>
 		  <PackageReference Include="FastLog.Net" Version="1.1.8568" />
+		</ItemGroup>
+
+		<ItemGroup>
+		  <None Include="Icon.png">
+		    <Pack>True</Pack>
+		    <PackagePath>\</PackagePath>
+		  </None>
 		</ItemGroup>
 	
 
