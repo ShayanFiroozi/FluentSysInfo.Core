@@ -2,7 +2,7 @@
 
 namespace FluentSysInfo.Core.Models
 {
-    public class SysInfoModel
+    internal class SysInfoModel
     {
 
         public FluentSysInfoTypes SysInfoType { get; set; }

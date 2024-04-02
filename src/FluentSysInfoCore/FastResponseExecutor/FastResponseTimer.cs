@@ -23,7 +23,7 @@ namespace FluentSysInfo.Core.FastResponseExecutor
     public sealed partial class FastResponseAgentExecutor
     {
 
-        internal sealed class FastResponseTimer
+        private sealed class FastResponseTimer
         {
             private Timer Timer;
 

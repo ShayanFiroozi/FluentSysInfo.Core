@@ -24,7 +24,7 @@ using System.Threading;
 ///*---------------------------------------------------------------------------------------------
 namespace FluentSysInfo.Core.Helpers
 {
-    public static class FastResponseManagementHelper
+    internal static class FastResponseManagementHelper
     {
         private static readonly ReaderWriterLockSlim SlimLock = new ReaderWriterLockSlim();
 
