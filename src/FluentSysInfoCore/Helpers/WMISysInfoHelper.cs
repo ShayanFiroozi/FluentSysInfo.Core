@@ -18,7 +18,7 @@ using System.Linq;
 
 namespace FluentSysInfo.Core.Helpers
 {
-    public sealed class WmiSysInfoHelper
+    internal sealed class WmiSysInfoHelper
     {
         private const string PowerShellCommandPattern = "Get-CimInstance -Class {TargetClassName} -ErrorAction Stop | Select-Object *";
 
@@ -43,6 +43,18 @@ namespace FluentSysInfo.Core.Helpers
 
                 return GetUserDefinedWMIClassSysInfo(targetWMIClassName);
             }
+        }
+
+
+        public string GetSysInfo(string CIMClassName)
+        {
+            if (string.IsNullOrWhiteSpace(CIMClassName))
+            {
+                throw new System.ArgumentException($"'{nameof(CIMClassName)}' cannot be null or whitespace.", nameof(CIMClassName));
+            }
+
+                return GetUserDefinedWMIClassSysInfo(CIMClassName);
+            
         }
 
 

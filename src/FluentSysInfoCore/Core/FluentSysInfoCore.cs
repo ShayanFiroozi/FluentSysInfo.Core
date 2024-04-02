@@ -44,6 +44,12 @@ namespace FluentSysInfo.Core
         }
 
 
+        public string GetSystemInfo(string WMIClassName)
+        {
+            // Get a fresh system information from WMI class via executing a powershell command 👇
+            return new WmiSysInfoHelper().GetSysInfo(WMIClassName);
+        }
+
         public void AddFastResponseAgent(FluentSysInfoTypes fastResponseAgent, TimeSpan ExecutionInterval)
         {
             FastResponseManagementHelper.AddAgent(fastResponseAgent, ExecutionInterval);
