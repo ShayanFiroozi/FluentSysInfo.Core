@@ -221,6 +221,45 @@ And the result from the **FluentSysInfo.Core** would be something like this :
 ```   
 
 <br/>
+
+
+
+- **How to use a custom WMI class name ?** ⬇
+<p align="center">
+<img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"
+</p>
+ 
+ ```csharp
+
+  Console.WriteLine(new FluentSysInfoCore().GetSystemInfo("CIM_Display"));
+
+```   
+
+And the result from the **FluentSysInfo.Core** would be something like this :  
+<p align="center">
+<img src="https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white"
+</p>
+ 
+```json
+{
+ "DeviceID": "DesktopMonitor1",
+ "Name": "HP EliteDisplay E221 LED Backlit Monitor",
+ "PixelsPerXLogicalInch": "96",
+ "PixelsPerYLogicalInch": "96",
+ "Status": "OK",
+ "Caption": "HP EliteDisplay E221 LED Backlit Monitor",
+ "Description": "HP EliteDisplay E221 LED Backlit Monitor",
+ "Availability": "8",
+ "ConfigManagerErrorCode": "0",
+ "ConfigManagerUserConfig": "False",
+ "PNPDeviceID": "DISPLAY\\HWP3061\\5&132B4D04&0&UID4352",
+ "SystemName": "Removed! 🤘",
+ "MonitorManufacturer": "HP",
+ "MonitorType": "HP EliteDisplay E221 LED Backlit Monitor"
+}
+```
+
+<br/>
  
 ## Known Issues ‼ 
  **Not Reported Yet!** 😎
