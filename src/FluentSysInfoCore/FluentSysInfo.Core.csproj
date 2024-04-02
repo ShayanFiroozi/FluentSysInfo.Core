@@ -23,6 +23,7 @@
 			<PackageReadmeFile>README-Nuget.md</PackageReadmeFile>
 			<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
 			<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+			<Version>1.0.8859</Version>
 		</PropertyGroup>
 
 		<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
