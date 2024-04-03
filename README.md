@@ -17,8 +17,6 @@
  
 **FluentSysInfo.Core** Provides the accessibility to the various System Informations.
 
-✔ FluentSysInfo.Core uses [FastLog.Net](https://github.com/ShayanFiroozi/FastLog.Net) , Ultra Fast and High performance logger for .NET 💯 
-
 <br/>
 
 
