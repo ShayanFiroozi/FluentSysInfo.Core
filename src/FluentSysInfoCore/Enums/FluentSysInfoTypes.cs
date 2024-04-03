@@ -14,9 +14,10 @@
 
 namespace FluentSysInfo.Core.Enums
 {
-    public enum FluentSysInfoTypes : byte
+    public enum FluentSysInfoTypes : sbyte
     {
-        None = 0,
+        ListAllWMIClassNames = -1,
+        UserDefinedWMIClass = 0,
         DateTime = 1,
         MainBoard = 2,
         BIOS = 3,
@@ -30,6 +31,7 @@ namespace FluentSysInfo.Core.Enums
         OperatingSystem = 11,
         RunningProcesses = 12,
         InstalledServices = 13
+
     }
 
 }

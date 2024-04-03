@@ -25,7 +25,7 @@ namespace FluentSysInfo.Core.Helpers
 
         public string GetSysInfo(FluentSysInfoTypes SysInfoType)
         {
-            if (SysInfoType <= 0)
+            if ((sbyte)SysInfoType < -1)
             {
                 throw new System.ArgumentException($"'{nameof(SysInfoType)}' is not supported.", nameof(SysInfoType));
             }
@@ -34,6 +34,11 @@ namespace FluentSysInfo.Core.Helpers
             if (SysInfoType == FluentSysInfoTypes.DateTime)
             {
                 return new GetDateTimeHelper().GetInfo();
+            }
+            // Get all available WMI classes name
+            else if (SysInfoType == FluentSysInfoTypes.ListAllWMIClassNames)
+            {
+                return GetAllWMIClassesList();
             }
             else // Others will use 'WMI Classes' via 'PowreShell'
             {
@@ -53,13 +58,13 @@ namespace FluentSysInfo.Core.Helpers
                 throw new System.ArgumentException($"'{nameof(CIMClassName)}' cannot be null or whitespace.", nameof(CIMClassName));
             }
 
-                return GetUserDefinedWMIClassSysInfo(CIMClassName);
-            
+            return GetUserDefinedWMIClassSysInfo(CIMClassName);
+
         }
 
 
 
-        public string GetUserDefinedWMIClassSysInfo(string WMIClassName)
+        private string GetUserDefinedWMIClassSysInfo(string WMIClassName)
         {
 
             if (string.IsNullOrEmpty(WMIClassName))
@@ -71,6 +76,12 @@ namespace FluentSysInfo.Core.Helpers
                          .GetPowerShellCommandResultAsync(PowerShellCommandPattern.Replace("{TargetClassName}", WMIClassName), true);
         }
 
+
+        private string GetAllWMIClassesList()
+        {
+            return new PowerShellHelper()
+                .GetPowerShellCommandResultAsync("(get-wmiobject –list | where{$_.Name.StartsWith('CIM') -Or $_.Name.StartsWith('Win32')}).\"Name\"", false);
+        }
 
     }
 

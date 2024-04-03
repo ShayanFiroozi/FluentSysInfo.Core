@@ -55,7 +55,7 @@ namespace FluentSysInfo.Core.FastResponseExecutor
 
                 Interval = fastResponseAgent.ExecutionInterval.TotalMilliseconds;
 
-                if (fastResponseAgent.FastResponseAgent != FluentSysInfoTypes.None)
+                if (fastResponseAgent.FastResponseAgent != FluentSysInfoTypes.UserDefinedWMIClass)
                 {
                     SysInfoType = fastResponseAgent.FastResponseAgent;
                 }
@@ -75,7 +75,7 @@ namespace FluentSysInfo.Core.FastResponseExecutor
                 }
 
                 Interval = ExecutionInterval.TotalMilliseconds;
-                SysInfoType = FluentSysInfoTypes.None; // User-Defined ClassName
+                SysInfoType = FluentSysInfoTypes.UserDefinedWMIClass; // User-Defined ClassName
                 this.WMIClassName = WMIClassName;
 
             }
@@ -99,7 +99,7 @@ namespace FluentSysInfo.Core.FastResponseExecutor
             private void Timer_Elapsed(object sender, ElapsedEventArgs e)
             {
                 OnTimerExecution?.Invoke(sender,
-                                         SysInfoType != FluentSysInfoTypes.None ?
+                                         SysInfoType != FluentSysInfoTypes.UserDefinedWMIClass ?
                                          new WmiSysInfoHelper().GetSysInfo(SysInfoType) :
                                          new WmiSysInfoHelper().GetSysInfo(WMIClassName));
 
