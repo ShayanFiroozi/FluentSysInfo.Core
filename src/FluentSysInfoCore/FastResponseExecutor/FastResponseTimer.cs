@@ -26,9 +26,9 @@ namespace FluentSysInfo.Core.FastResponseExecutor
         private sealed class FastResponseTimer
         {
             private Timer Timer;
-
             private readonly double Interval;
             private readonly FluentSysInfoTypes SysInfoType;
+            private readonly string WMIClassName;
             internal event EventHandler<string> OnTimerExecution;
 
             internal bool IsRunning
@@ -48,13 +48,35 @@ namespace FluentSysInfo.Core.FastResponseExecutor
                     throw new ArgumentNullException(nameof(fastResponseAgent));
                 }
 
-                if (fastResponseAgent.FastResponseAgent == 0 || fastResponseAgent.FastResponseAgent == FluentSysInfoTypes.DateTime)
+                if (fastResponseAgent.FastResponseAgent == FluentSysInfoTypes.DateTime)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(fastResponseAgent),"Not supported agent.");
+                    throw new ArgumentOutOfRangeException(nameof(fastResponseAgent), "Not supported agent.");
                 }
 
                 Interval = fastResponseAgent.ExecutionInterval.TotalMilliseconds;
-                SysInfoType = fastResponseAgent.FastResponseAgent;
+
+                if (fastResponseAgent.FastResponseAgent != FluentSysInfoTypes.None)
+                {
+                    SysInfoType = fastResponseAgent.FastResponseAgent;
+                }
+                else
+                {
+                    WMIClassName = fastResponseAgent.WMIClassName;
+                }
+
+            }
+
+
+            internal FastResponseTimer(string WMIClassName, TimeSpan ExecutionInterval)
+            {
+                if (string.IsNullOrWhiteSpace(WMIClassName))
+                {
+                    throw new ArgumentException($"'{nameof(WMIClassName)}' cannot be null or whitespace.", nameof(WMIClassName));
+                }
+
+                Interval = ExecutionInterval.TotalMilliseconds;
+                SysInfoType = FluentSysInfoTypes.None; // User-Defined ClassName
+                this.WMIClassName = WMIClassName;
 
             }
 
@@ -76,7 +98,10 @@ namespace FluentSysInfo.Core.FastResponseExecutor
 
             private void Timer_Elapsed(object sender, ElapsedEventArgs e)
             {
-                OnTimerExecution?.Invoke(sender, new WmiSysInfoHelper().GetSysInfo(SysInfoType));
+                OnTimerExecution?.Invoke(sender,
+                                         SysInfoType != FluentSysInfoTypes.None ?
+                                         new WmiSysInfoHelper().GetSysInfo(SysInfoType) :
+                                         new WmiSysInfoHelper().GetSysInfo(WMIClassName));
 
             }
 

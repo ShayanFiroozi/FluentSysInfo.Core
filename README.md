@@ -214,6 +214,7 @@ And the result from the **FluentSysInfo.Core** would be something like this :
 
   fluentSysInfoCore.AddFastResponseAgent(FluentSysInfoTypes.InstalledServices, TimeSpan.FromSeconds(5));
   fluentSysInfoCore.AddFastResponseAgent(FluentSysInfoTypes.RunningProcesses, TimeSpan.FromSeconds(5));
+  fluentSysInfoCore.AddFastResponseAgent("CIM_Display", TimeSpan.FromSeconds(5));
 
   fluentSysInfoCore.StartAllFastResponseAgents();
 

@@ -22,12 +22,21 @@ namespace FluentSysInfo.Core.Models
     {
         public FluentSysInfoTypes FastResponseAgent { get; set; }
         public TimeSpan ExecutionInterval { get; set; }
+        public string WMIClassName { get; set; }
 
 
         public FastResponseAgentModel(FluentSysInfoTypes fastResponseAgent,
                                       TimeSpan executionInterval)
         {
             FastResponseAgent = fastResponseAgent;
+            ExecutionInterval = executionInterval;
+        }
+
+
+        public FastResponseAgentModel(string WMIClassName,
+                                     TimeSpan executionInterval)
+        {
+            this.WMIClassName = WMIClassName;
             ExecutionInterval = executionInterval;
         }
 

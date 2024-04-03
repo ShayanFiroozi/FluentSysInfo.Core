@@ -46,13 +46,29 @@ namespace FluentSysInfo.Core
 
         public string GetSystemInfo(string WMIClassName)
         {
-            // Get a fresh system information from WMI class via executing a powershell command 👇
-            return new WmiSysInfoHelper().GetSysInfo(WMIClassName);
+            WMIClassName = WMIClassName.ToLower();
+
+            if (FastResponseManagementHelper.IsAgentActive(WMIClassName))
+            {
+                // Gte the system info result from the 'Fast Response Agent'  ( if is active )
+                return FastResponseManagementHelper.GetAgentResult(WMIClassName);
+            }
+            else
+            {
+                // Get a fresh system information from WMI class via executing a powershell command 👇
+                return new WmiSysInfoHelper().GetSysInfo(WMIClassName);
+            }
         }
 
         public void AddFastResponseAgent(FluentSysInfoTypes fastResponseAgent, TimeSpan ExecutionInterval)
         {
             FastResponseManagementHelper.AddAgent(fastResponseAgent, ExecutionInterval);
+        }
+
+
+        public void AddFastResponseAgent(string WMIClassName, TimeSpan ExecutionInterval)
+        {
+            FastResponseManagementHelper.AddAgent(WMIClassName.ToLower(), ExecutionInterval);
         }
 
 

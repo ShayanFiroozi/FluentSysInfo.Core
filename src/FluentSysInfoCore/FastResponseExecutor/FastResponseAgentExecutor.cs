@@ -26,6 +26,8 @@ namespace FluentSysInfo.Core.FastResponseExecutor
         private string result;
         private readonly FastResponseTimer ExecutionTimer;
 
+        public string WMIClassName { get; set; }
+
         public event EventHandler<string> OnExecution;
 
         public string Result
@@ -72,7 +74,9 @@ namespace FluentSysInfo.Core.FastResponseExecutor
 
             ExecutionTimer = new FastResponseTimer(fastResponseAgent);
             Agent = fastResponseAgent;
+            WMIClassName = fastResponseAgent.WMIClassName;
         }
+
 
 
 

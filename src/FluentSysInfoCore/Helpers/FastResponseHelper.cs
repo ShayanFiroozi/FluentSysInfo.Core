@@ -107,6 +107,33 @@ namespace FluentSysInfo.Core.Helpers
         }
 
 
+        public static void AddAgent(string WMIClassName, TimeSpan ExecutionInterval)
+        {
+
+            if (IsAgentExists(WMIClassName))
+            {
+                throw new InvalidOperationException("The Agent is already exists on the list");
+            }
+
+            if (string.IsNullOrWhiteSpace(WMIClassName))
+            {
+                throw new ArgumentException($"'{nameof(WMIClassName)}' cannot be null or whitespace.", nameof(WMIClassName));
+            }
+
+
+            try
+            {
+                SlimLock.EnterWriteLock();
+                activeAgents.Add(new FastResponseAgentExecutor(new FastResponseAgentModel(WMIClassName, ExecutionInterval)));
+            }
+            finally
+            {
+                SlimLock.ExitWriteLock();
+            }
+
+        }
+
+
         public static void RemoveAgent(FastResponseAgentExecutor fastResponseAgent)
         {
             if (!IsAgentExists(fastResponseAgent)) return;
@@ -160,6 +187,11 @@ namespace FluentSysInfo.Core.Helpers
         }
 
 
+        public static bool IsAgentExists(string WMIClassName)
+        {
+            return ActiveAgents.Any(a => a.WMIClassName == WMIClassName);
+        }
+
         public static bool IsAgentExists(FastResponseAgentExecutor fastResponseAgent)
         {
             return ActiveAgents.Any(a => a == fastResponseAgent);
@@ -180,6 +212,13 @@ namespace FluentSysInfo.Core.Helpers
             if (!IsAgentExists(fastResponseAgent)) return false;
 
             return ActiveAgents.Single(a => a == fastResponseAgent).IsRunning();
+        }
+
+        public static bool IsAgentActive(string WMIClassName)
+        {
+            if (!IsAgentExists(WMIClassName)) return false;
+
+            return ActiveAgents.Single(a => a.WMIClassName == WMIClassName).IsRunning();
         }
 
         public static bool IsAgentActive(FastResponseAgentModel fastResponseAgent)
@@ -250,6 +289,14 @@ namespace FluentSysInfo.Core.Helpers
             if (!IsAgentActive(SysInfoFastResponseAgentType)) return string.Empty;
 
             return ActiveAgents.Single(a => a == SysInfoFastResponseAgentType).Result;
+        }
+
+
+        public static string GetAgentResult(string WMIClassName)
+        {
+            if (!IsAgentActive(WMIClassName)) return string.Empty;
+
+            return ActiveAgents.Single(a => a.WMIClassName == WMIClassName).Result;
         }
 
         public static string GetAgentResult(FastResponseAgentModel SysInfoFastResponseAgentType)

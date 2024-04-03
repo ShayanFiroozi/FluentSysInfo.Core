@@ -8,13 +8,11 @@ namespace FluentSysInfoTest
     internal static class Program
     {
 
-        
+
 
         static async Task Main(string[] args)
         {
 
-            // Example with custrom WMI Class Name
-            Console.WriteLine(new FluentSysInfoCore().GetSystemInfo("CIM_Display"));
 
             Console.WriteLine("Initializing the 'Fast Response Agent(s)'....");
 
@@ -23,6 +21,8 @@ namespace FluentSysInfoTest
 
                 FluentSysInfoCore fluentSysInfoCore = new FluentSysInfoCore();
 
+
+                // Add FluentSysInfo.Core pre defined system info
                 fluentSysInfoCore.AddFastResponseAgent(FluentSysInfoTypes.InstalledServices, TimeSpan.FromSeconds(5));
                 fluentSysInfoCore.AddFastResponseAgent(FluentSysInfoTypes.RunningProcesses, TimeSpan.FromSeconds(5));
                 fluentSysInfoCore.AddFastResponseAgent(FluentSysInfoTypes.Disk, TimeSpan.FromSeconds(5));
@@ -30,6 +30,9 @@ namespace FluentSysInfoTest
                 fluentSysInfoCore.AddFastResponseAgent(FluentSysInfoTypes.NetworkInterface, TimeSpan.FromSeconds(5));
                 fluentSysInfoCore.AddFastResponseAgent(FluentSysInfoTypes.PhysicalMemory, TimeSpan.FromSeconds(5));
 
+
+                // Add User Define WMI Class Fast Response Agent
+                fluentSysInfoCore.AddFastResponseAgent("CIM_Display", TimeSpan.FromSeconds(5));
 
 
                 fluentSysInfoCore.StartAllFastResponseAgents();
@@ -47,9 +50,10 @@ namespace FluentSysInfoTest
             for (int i = 0; i < 2_000; i++)
             {
 
-                Console.WriteLine(fluentSysInfoCore2.GetSystemInfo(FluentSysInfoTypes.InstalledServices));
-                Console.WriteLine(fluentSysInfoCore2.GetSystemInfo(FluentSysInfoTypes.RunningProcesses));
+
+                Console.WriteLine(fluentSysInfoCore2.GetSystemInfo("CIM_Display"));
                 Console.WriteLine(fluentSysInfoCore2.GetSystemInfo(FluentSysInfoTypes.Disk));
+                Console.WriteLine(fluentSysInfoCore2.GetSystemInfo(FluentSysInfoTypes.NetworkInterface));
                 Console.WriteLine(fluentSysInfoCore2.GetSystemInfo(FluentSysInfoTypes.Drive));
                 Console.WriteLine(fluentSysInfoCore2.GetSystemInfo(FluentSysInfoTypes.PhysicalMemory));
 
