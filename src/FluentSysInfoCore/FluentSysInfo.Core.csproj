@@ -66,10 +66,6 @@
 		</ItemGroup>
 
 		<ItemGroup>
-		  <PackageReference Include="FastLog.Net" Version="1.1.8568" />
-		</ItemGroup>
-
-		<ItemGroup>
 		  <None Include="Icon.png">
 		    <Pack>True</Pack>
 		    <PackagePath>\</PackagePath>
