@@ -1,5 +1,4 @@
 # FluentSysInfo.Core Change Log :
-</br>
 
 
 ## ✔ 1.0
