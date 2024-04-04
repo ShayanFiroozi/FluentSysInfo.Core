@@ -1,7 +1,6 @@
 # All Available WMI Class Names (May be different on each machine) :
 </br>
 
-
 Win32_DeviceChangeEvent
 Win32_SystemConfigurationChangeEvent
 Win32_VolumeChangeEvent
