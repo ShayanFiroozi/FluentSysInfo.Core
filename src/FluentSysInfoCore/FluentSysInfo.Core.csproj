@@ -19,11 +19,13 @@
 			<PackageProjectUrl>https://github.com/ShayanFiroozi/FluentSysInfo.Core</PackageProjectUrl>
 			<RepositoryUrl>https://github.com/ShayanFiroozi/FluentSysInfo.Core</RepositoryUrl>
 			<PackageTags>csharp,dotnet,dotnetcore,netcore,dotnet-core,powershell,powershell-script,fluent csharp-code,hardware-information,systeminfo,systeminformation,wmi-query,softlock</PackageTags>
-			<PackageReleaseNotes>Firt Release of FluentSysInfo.Core</PackageReleaseNotes>
+			<PackageReleaseNotes> ✔ Accept the User-Defined WMI Class.
+  ✔ Accept the User-Defined Fast Response WMI Class.
+  ✔ Able to get all available WMI Class on running OS.</PackageReleaseNotes>
 			<PackageReadmeFile>README-Nuget.md</PackageReadmeFile>
 			<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
 			<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-			<Version>1.0.8859</Version>
+			<Version>1.0.8860</Version>
 		</PropertyGroup>
 
 		<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
